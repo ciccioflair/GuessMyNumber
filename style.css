@@ -9,6 +9,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  
 }
 
 body {
@@ -16,6 +17,7 @@ body {
   color: #eee;
   background-color: #222;
   /* background-color: #60b347; */
+  overflow: hidden;
 }
 
 /* LAYOUT */
