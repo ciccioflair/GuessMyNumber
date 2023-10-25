@@ -16,7 +16,6 @@ const rnd = function () {
 let highscore = 0;
 let secretNumber = rnd();
 let score = 20;
-document.querySelector(".flip-card-back").textContent = secretNumber;
 
 
 document.querySelector('.check').addEventListener ('click', function () {
@@ -29,7 +28,7 @@ document.querySelector('.check').addEventListener ('click', function () {
     } else if (myGuessNum < 0) {
         textMessage.textContent = "⛔ No negative number...";
     } else if (myGuessNum === secretNumber) {
-        
+        document.querySelector(".flip-card-back").textContent = secretNumber;
         textMessage.textContent = "🏆 Correct number!!";
         document.querySelector(".flip-card-back").classList.add("numberFlip");
         if (score > highscore) {
@@ -57,7 +56,7 @@ document.querySelector("#again").addEventListener('click', function() {
     document.querySelector(".score").textContent = score;
     document.querySelector("#score-desktop").textContent = score;
     secretNumber = rnd(); // new random secret number;
-    document.querySelector(".flip-card-back").textContent = secretNumber;
+    
     document.querySelector(".guess").value = "";
     document.querySelector(".message").textContent = "Start guessing...";
 
