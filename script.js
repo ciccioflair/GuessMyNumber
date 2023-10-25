@@ -31,7 +31,6 @@ document.querySelector('.check').addEventListener ('click', function () {
     } else if (myGuessNum === secretNumber) {
         
         textMessage.textContent = "🏆 Correct number!!";
-        debugger;
         document.querySelector(".flip-card-back").classList.add("numberFlip");
         if (score > highscore) {
             highscore = score;
