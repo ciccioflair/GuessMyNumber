@@ -2,33 +2,38 @@
 
 // Function randomizer
 const rnd = function () {
-  return Math.trunc(Math.random() * 20 + 1);
-};
-
+    return Math.trunc(Math.random() * 20 + 1);
+  };
 
 // Global variable
 let highscore = 0;
 let secretNumber = rnd();
 let score = 20;
+let myGuessNum = Number(document.querySelector('.guess').value);
+
+// Functions
+const displayMessage = function (message) {
+    document.querySelector('.message').textContent = message;
+}
 
 // Primary listener
 document.querySelector('.check').addEventListener('click', function () {
 
-  const myGuessNum = Number(document.querySelector('.guess').value);
-  let textMessage = document.querySelector('.message');
+  // Update the value of number  
+  myGuessNum = Number(document.querySelector('.guess').value);
 
   // No number case
   if (!myGuessNum) {
-    textMessage.textContent = '⛔ No Number!';
+    displayMessage('⛔ No Number!');
 
   // Negative number case  
   } else if (myGuessNum < 0) {
-    textMessage.textContent = '⛔ No negative number...';
+    displayMessage('⛔ No negative number...');
 
   // Secret number guessed case
   } else if (myGuessNum === secretNumber) {
     document.querySelector('.flip-card-back').textContent = secretNumber;
-    textMessage.textContent = '🏆 Correct number!!';
+    displayMessage('🏆 Correct number!!');
     document.querySelector('.flip-card-back').classList.add('numberFlip');
 
     // HI-score control and update
@@ -44,11 +49,11 @@ document.querySelector('.check').addEventListener('click', function () {
       score--;
       document.querySelector('.score').textContent = score;
       document.querySelector('#score-desktop').textContent = score;
-      textMessage.textContent = myGuessNum > secretNumber ? '📈 Too high!!' : '📉 Too low!!'; // Ternary operatore to check if number is greater or smaller than secret number
+      displayMessage(myGuessNum > secretNumber ? '📈 Too high!!' : '📉 Too low!!'); // Ternary operatore to check if number is greater or smaller than secret number
 
     // Case in which score is 0  
     } else {
-        textMessage.textContent = '💥 You lost the game!!';
+        displayMessage('💥 You lost the game!!');
         document.querySelector(".score").textContent = 0;
     }
   } 
@@ -70,5 +75,5 @@ document.querySelector('#again').addEventListener('click', function () {
   document.querySelector('#score-desktop').textContent = score;
 
   document.querySelector('.guess').value = '';
-  document.querySelector('.message').textContent = 'Start guessing...';
+  displayMessage('Start guessing...');
 });
