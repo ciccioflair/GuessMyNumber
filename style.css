@@ -168,7 +168,7 @@ h1 {
 
 .label-score-mobile {
   position: absolute;
-  bottom: 22rem;
+  bottom: 20rem;
   left: 1rem;
   font-size: 2rem;
   display: none;
@@ -176,7 +176,7 @@ h1 {
 
 .label-highscore-mobile {
   position: absolute;
-  bottom: 22rem;
+  bottom: 20rem;
   right: 1rem;
   font-size: 2rem;
   display: none;
