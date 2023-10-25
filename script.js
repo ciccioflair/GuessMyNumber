@@ -59,7 +59,7 @@ document.querySelector("#again").addEventListener('click', function() {
     document.querySelector("#score-desktop").textContent = score;
     secretNumber = rnd(); // new random secret number;
     document.querySelector(".guess").value = "";
-
+    document.querySelector(".message").textContent = "Start guessing...";
 
 })
 
