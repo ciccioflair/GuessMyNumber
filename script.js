@@ -58,6 +58,7 @@ document.querySelector("#again").addEventListener('click', function() {
     document.querySelector(".score").textContent = score;
     document.querySelector("#score-desktop").textContent = score;
     secretNumber = rnd(); // new random secret number;
+    document.querySelector(".flip-card-back").textContent = secretNumber;
     document.querySelector(".guess").value = "";
     document.querySelector(".message").textContent = "Start guessing...";
 
